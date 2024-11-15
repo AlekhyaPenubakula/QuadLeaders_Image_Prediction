@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Leader Image Prediction App">
+    <meta name="author" content="Devcrud">
+    <title>Leader Image Prediction</title>
+    
+    <style>
+        body {
+            background-image: url('static/leaders.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            color: #040404;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            background-color: transparent;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.4s ease;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .navbar a {
+            color: black;
+            font-size: 18px;
+            text-transform: uppercase;
+            text-decoration: none;
+            margin-left: 20px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: #ffffff;
+            background-color: rgb(90, 88, 88);
+        }
+
+        section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #070707;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: bold;
+            color: #070707;
+            margin-bottom: 20px;
+        }
+
+        .section-content {
+            font-size: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        #about {
+            background-color: transparent;
+        }
+
+        #contact {
+            background-color: transparent;
+            color: #0b0b0b;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact</a>
+        <a href="{{ url_for('predict_page') }}">Get Started</a>
+    </div>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="section-content">
+            <h1 class="section-title">Leader Image Prediction</h1>
+            <p>Leverage our advanced deep learning model to predict the identity of leaders based on their images.</p>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about">
+        <div class="section-content">
+            <h2 class="section-title">About Us</h2>
+            <p>We specialize in developing advanced predictive models for image recognition and classification. Our solutions are designed to identify and classify world leaders based on image data, using cutting-edge deep learning algorithms. By leveraging our expertise in artificial intelligence and computer vision, we aim to deliver highly accurate and efficient predictions.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="section-content">
+            <h2 class="section-title">Contact Us</h2>
+            <p>If you have any questions or need assistance, feel free to reach out to us. We are here to help you with any inquiries related to our Leader Image Prediction services. Our team is dedicated to ensuring you have the best experience with our application.</p>
+
+            <p>Email: info@leaderpredict.com</p>
+            <p>Phone: +1 800 123 4567</p>
+        </div>
+    </section>
+
+    <script>
+        document.querySelectorAll('.navbar a').forEach(anchor => {
+            if (anchor.getAttribute('href').startsWith("#")) {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
